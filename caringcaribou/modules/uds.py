@@ -750,9 +750,11 @@ def request_seed(arb_id_request, arb_id_response, level,
     :rtype [int] or None
     """
     # Sanity checks
+    """                 
     if (not Services.SecurityAccess.RequestSeedOrSendKey()
             .is_valid_request_seed_level(level)):
         raise ValueError("Invalid request seed level")
+    """
     if isinstance(timeout, float) and timeout < 0.0:
         raise ValueError("Timeout value ({0}) cannot be negative"
                          .format(timeout))
